@@ -25,7 +25,7 @@ function loginUser(event) {
 
     if (storedPassword && storedPassword === password) {
         alert("Inicio de sesión exitoso.");
-        window.location.href = "/pags/productos.html";
+        window.location.href = "../pags/productos.html";
         alert("BIENVENIDO " + username);
     } else {
         alert("VERIFIQUE: Usuario o contraseña incorrectos.");
