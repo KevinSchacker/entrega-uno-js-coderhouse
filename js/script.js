@@ -14,19 +14,18 @@ function registerUser(event) {
     }
 }
 
-// Función para iniciar sesión
+/// Función para iniciar sesión
 function loginUser(event) {
     event.preventDefault(); 
-  
+
     const username = document.getElementById("loginUsername").value;
     const password = document.getElementById("loginPassword").value;
-  
+
     const storedPassword = localStorage.getItem(username);
-  
+
     if (storedPassword && storedPassword === password) {
-        alert("Inicio de sesión exitoso.");
-        window.location.href = "/pags/productos.html";
-        alert("BIENVENIDO " + username);
+        alert("BIENVENIDO " + username);  // Mostrar bienvenida primero
+        window.location.href = "/pags/productos.html"; // Luego redirigir
     } else {
         alert("VERIFIQUE: Usuario o contraseña incorrectos.");
     }
