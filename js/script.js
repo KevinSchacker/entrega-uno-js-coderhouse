@@ -36,5 +36,3 @@ function loginUser(event) {
 document.getElementById("registerForm").addEventListener("submit", registerUser);
 document.getElementById("loginForm").addEventListener("submit", loginUser);
 
-
-
