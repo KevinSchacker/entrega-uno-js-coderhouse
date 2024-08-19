@@ -473,5 +473,44 @@ iframe {
 .payment-methods .container .payment-icons .payment-icon:hover {
   transform: scale(1.1);
 }
+/* Contenedor principal */
+.contenedor-productos-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  padding-right: 20px; /* Agrega un espacio de 20px en el lado derecho del contenedor */
+}
 
-/*# sourceMappingURL=estilo.css.map */
+/* Carrito */
+.carrito-container {
+  width: 300px;
+  background-color: #fafafa;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px  rgb(92, 92, 92);
+  position: absolute;
+  right: 20px; /* Ajusta esto para crear espacio desde el borde derecho de la página */
+  top: 0;
+  z-index: 100;
+}
+
+/* Limitar la altura del carrito y permitir scroll */
+.carrito-container #lista-carrito {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Botones */
+#carrito-botones {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-vaciar, .btn-compra {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 15px;
+  text-align: center;
+  width: 100%;
+}
