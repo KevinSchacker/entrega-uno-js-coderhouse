@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Evento para confirmar la compra
     document.getElementById('confirmar-compra').addEventListener('click', () => {
         if (carrito.length > 0) {
-            mostrarMensaje('¡Compra confirmada!', 'exito');
+            mostrarMensaje('¡Compra confirmada! Muchas gracias por elegirnos', 'exito');
             localStorage.removeItem('carrito');
             setTimeout(() => {
                 window.location.href = 'productos.html'; // Redirigir a la página principal o donde quieras
