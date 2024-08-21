@@ -83,6 +83,14 @@
         mostrarCarrito();
     });
 
+    // Función para redirigir a la página de compra
+    botonRealizarCompra.addEventListener('click', () => {
+        // Guarda el carrito en localStorage
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        // Redirige a la página de checkout
+        window.location.href = '../pags/checkout.html';
+    });
+
     // Función para obtener el precio del producto
     function obtenerPrecioProducto(nombre) {
         const precios = {

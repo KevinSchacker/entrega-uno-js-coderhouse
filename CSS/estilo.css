@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 body {
   font-family: "Poppins", sans-serif;
   background-image: url("../img/fondo/fondo2.jpg");
@@ -11,6 +12,7 @@ body {
   box-sizing: border-box;
   background-position: center;
 }
+
 @media (max-width: 576px) {
   body {
     padding-top: 56px;
@@ -21,40 +23,49 @@ body {
   background-color: transparent !important;
   transition: all 0.3s ease;
 }
+
 .navbar .navbar-brand img {
   max-width: 350px !important;
   margin-right: 10px !important;
 }
+
 .navbar .nav-link {
   font-size: 24px !important;
   color: rgb(134, 29, 34) !important;
   transition: all 0.3s ease;
 }
+
 .navbar .nav-link.active {
   color: rgb(134, 29, 34) !important;
   font-weight: bold;
 }
+
 .navbar .nav-link:hover {
   color: rgb(134, 29, 34) !important;
   font-weight: bold;
 }
+
 @media (max-width: 430px) {
   .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
   .navbar .navbar-brand {
     flex: 1;
   }
+
   .navbar .navbar-brand img {
     max-width: 260px !important;
     margin-right: 1px !important;
   }
+
   .navbar .navbar-toggler {
     flex: 0;
     margin-left: 10px;
   }
+
   .navbar .collapse.navbar-collapse {
     flex-basis: 100%;
     justify-content: center;
@@ -65,6 +76,7 @@ body {
 #productos {
   text-align: center;
 }
+
 #productos h1 {
   text-align: center;
   font-weight: bold;
@@ -72,6 +84,7 @@ body {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
 #productos .productos-slider {
   display: flex;
   justify-content: center;
@@ -79,6 +92,7 @@ body {
   flex-wrap: nowrap;
   margin-top: 4rem;
 }
+
 #productos .productos-slider a {
   flex: 0 0 30%;
   margin: 0 1%;
@@ -87,10 +101,13 @@ body {
   border-radius: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 #productos .productos-slider a:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgb(134, 29, 34); /* ampliar y fondo color marca */
+  box-shadow: 0 10px 20px rgb(134, 29, 34);
+  /* ampliar y fondo color marca */
 }
+
 #productos .productos-slider a img {
   width: 100%;
   height: auto;
@@ -103,19 +120,23 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
   }
+
   #productos .productos-slider {
     flex-wrap: wrap;
     margin-top: 2rem;
   }
+
   #productos .productos-slider a {
     flex: 0 0 60%;
     margin: 10px 0;
   }
+
   #productos .productos-slider a img {
     width: 100%;
     height: auto;
   }
 }
+
 footer {
   text-align: center;
   background-color: rgba(170, 170, 170, 0.337254902);
@@ -134,20 +155,24 @@ footer {
   text-align: center;
   margin-bottom: 40px;
 }
+
 #redes-sociales h2 {
   font-weight: bold;
   color: rgb(134, 29, 34);
   margin-top: 30px;
 }
+
 #redes-sociales img {
   max-width: 40px;
   height: auto;
   margin: 0 10px 30px;
   transition: transform 0.3s ease;
 }
+
 #redes-sociales img:hover {
   transform: scale(1.4);
 }
+
 @media (max-width: 430px) {
   #redes-sociales h2 {
     font-size: 20px;
@@ -164,6 +189,7 @@ footer {
   border-radius: 5px;
   padding: 10px 20px;
 }
+
 .btn:hover {
   background-color: #b0262d;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -178,7 +204,8 @@ footer {
 
 .carousel-item {
   position: relative;
-  text-align: center; /* Alineación centrada */
+  text-align: center;
+  /* Alineación centrada */
 }
 
 .carousel-item img {
@@ -197,17 +224,28 @@ footer {
 }
 
 .carousel-caption {
-  background-color: transparent; /* Fondo transparente para mostrar solo el texto */
-  color: #fff; /* Color de texto deseado */
-  bottom: 0; /* Ajuste a la parte inferior */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
-  text-align: center; /* Centrar el texto */
-  bottom: 0; /* Ajuste a la parte inferior */
-  left: 0; /* Ajuste a la izquierda */
-  width: 100%; /* Ancho completo del contenedor padre */
-  padding: 10px; /* Espacio interior */
-  white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
-  font-weight: bold; /* Texto en negrita */
+  background-color: transparent;
+  /* Fondo transparente para mostrar solo el texto */
+  color: #fff;
+  /* Color de texto deseado */
+  bottom: 0;
+  /* Ajuste a la parte inferior */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Sombra de texto */
+  text-align: center;
+  /* Centrar el texto */
+  bottom: 0;
+  /* Ajuste a la parte inferior */
+  left: 0;
+  /* Ajuste a la izquierda */
+  width: 100%;
+  /* Ancho completo del contenedor padre */
+  padding: 10px;
+  /* Espacio interior */
+  white-space: nowrap;
+  /* Evitar que el texto se divida en varias líneas */
+  font-weight: bold;
+  /* Texto en negrita */
 }
 
 .carousel-caption h5,
@@ -219,31 +257,45 @@ footer {
 
 @media (max-width: 576px) {
   .carousel-caption {
-    background-color: rgba(170, 170, 170, 0.337254902); /* Fondo transparente para mostrar solo el texto */
-    color: #fff; /* Color de texto deseado */
-    bottom: 0; /* Ajuste a la parte inferior */
-    padding: 20px; /* Espacio interior */
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+    background-color: rgba(170, 170, 170, 0.337254902);
+    /* Fondo transparente para mostrar solo el texto */
+    color: #fff;
+    /* Color de texto deseado */
+    bottom: 0;
+    /* Ajuste a la parte inferior */
+    padding: 20px;
+    /* Espacio interior */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    /* Sombra de texto */
   }
+
   .carousel-caption h5,
   .carousel-caption p {
-    font-weight: bold; /* Texto en negrita */
-    text-align: center; /* Alineación centrada */
-    margin-bottom: 0; /* Eliminar el margen inferior */
+    font-weight: bold;
+    /* Texto en negrita */
+    text-align: center;
+    /* Alineación centrada */
+    margin-bottom: 0;
+    /* Eliminar el margen inferior */
   }
+
   .carousel-item img {
-    max-height: 200px; /* Reducir la altura máxima de las imágenes en dispositivos móviles */
+    max-height: 200px;
+    /* Reducir la altura máxima de las imágenes en dispositivos móviles */
     margin-bottom: 100px;
   }
 }
+
 .nosotros {
   text-align: center;
   font-weight: bold;
   color: rgb(134, 29, 34);
 }
+
 .nosotros h1 {
   font-weight: bold;
 }
+
 .nosotros p {
   color: black;
   font-size: 16px;
@@ -253,26 +305,31 @@ footer {
   margin-right: 20px;
   text-align: justify;
 }
+
 .nosotros .marcas {
   margin-top: 20px;
 }
+
 .nosotros .marcas h2 {
   font-size: 24px;
   margin-bottom: 10px;
   color: rgb(134, 29, 34);
   font-weight: bold;
 }
+
 .nosotros .marcas .logos {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
+
 .nosotros .marcas .logos .logo {
   width: 150px;
   margin: 20px;
   text-align: center;
 }
+
 .nosotros .marcas .logos .logo img {
   max-width: 100%;
   height: auto;
@@ -306,6 +363,7 @@ iframe {
 .seguridad-page {
   padding: 60px;
 }
+
 .seguridad-page section {
   margin-bottom: 20px;
   margin-top: 20px;
@@ -313,6 +371,7 @@ iframe {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgb(134, 29, 34);
 }
+
 .seguridad-page section h2 {
   font-size: 24px;
   color: #000000;
@@ -321,29 +380,46 @@ iframe {
   border-bottom: 3px solid rgb(134, 29, 34);
   padding-bottom: 5px;
 }
+
 .seguridad-page section p {
   font-size: 16px;
   color: #1f1f1f;
   line-height: 1.5;
 }
-.seguridad-page section.services, .seguridad-page section.testimonials, .seguridad-page section.faqs, .seguridad-page section.promotions, .seguridad-page section.contact, .seguridad-page section.blog {
+
+.seguridad-page section.services,
+.seguridad-page section.testimonials,
+.seguridad-page section.faqs,
+.seguridad-page section.promotions,
+.seguridad-page section.contact,
+.seguridad-page section.blog {
   transition: transform 0.3s, background-color 0.3s;
   background-color: #ffffff;
 }
-.seguridad-page section.services:hover, .seguridad-page section.testimonials:hover, .seguridad-page section.faqs:hover, .seguridad-page section.promotions:hover, .seguridad-page section.contact:hover, .seguridad-page section.blog:hover {
+
+.seguridad-page section.services:hover,
+.seguridad-page section.testimonials:hover,
+.seguridad-page section.faqs:hover,
+.seguridad-page section.promotions:hover,
+.seguridad-page section.contact:hover,
+.seguridad-page section.blog:hover {
   transform: scale(1.04);
 }
+
 .seguridad-page .contact-form {
   display: flex;
   flex-direction: column;
 }
-.seguridad-page .contact-form input, .seguridad-page .contact-form textarea {
+
+.seguridad-page .contact-form input,
+.seguridad-page .contact-form textarea {
   margin-bottom: 10px;
   padding: 10px;
   border: 1px solid #cccccc;
   border-radius: 5px;
   font-size: 16px;
 }
+
 .seguridad-page .contact-form button {
   padding: 10px 20px;
   background-color: rgb(134, 29, 34);
@@ -353,18 +429,34 @@ iframe {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 .seguridad-page .contact-form button:hover {
   background-color: rgb(134, 29, 34);
 }
-.seguridad-page .service-item, .seguridad-page .testimonial-item, .seguridad-page .faq-item, .seguridad-page .promotion-item, .seguridad-page .blog-post {
+
+.seguridad-page .service-item,
+.seguridad-page .testimonial-item,
+.seguridad-page .faq-item,
+.seguridad-page .promotion-item,
+.seguridad-page .blog-post {
   margin-bottom: 20px;
 }
-.seguridad-page .service-item h3, .seguridad-page .testimonial-item h3, .seguridad-page .faq-item h3, .seguridad-page .promotion-item h3, .seguridad-page .blog-post h3 {
+
+.seguridad-page .service-item h3,
+.seguridad-page .testimonial-item h3,
+.seguridad-page .faq-item h3,
+.seguridad-page .promotion-item h3,
+.seguridad-page .blog-post h3 {
   font-size: 20px;
   color: #333333;
   margin-bottom: 5px;
 }
-.seguridad-page .service-item p, .seguridad-page .testimonial-item p, .seguridad-page .faq-item p, .seguridad-page .promotion-item p, .seguridad-page .blog-post p {
+
+.seguridad-page .service-item p,
+.seguridad-page .testimonial-item p,
+.seguridad-page .faq-item p,
+.seguridad-page .promotion-item p,
+.seguridad-page .blog-post p {
   font-size: 14px;
   color: #666666;
 }
@@ -381,6 +473,7 @@ iframe {
   justify-content: center;
   height: 350px;
 }
+
 .card .card-body {
   position: absolute;
   top: 0;
@@ -399,9 +492,11 @@ iframe {
   box-sizing: border-box;
   text-align: center;
 }
+
 .card:hover .card-body {
   opacity: 1;
 }
+
 .card .card-img-top {
   width: 100%;
   height: auto;
@@ -410,29 +505,36 @@ iframe {
   border: none;
   object-fit: cover;
 }
+
 .card .card-title {
   font-size: 20px;
   margin-bottom: 8px;
 }
+
 .card .card-text {
   font-size: 14px;
   margin-bottom: 10px;
 }
+
 .card .payment-methods {
   margin-top: auto;
 }
+
 .card .payment-methods h6 {
   margin-bottom: 8px;
   font-size: 1rem;
 }
+
 .card .payment-methods ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .card .payment-methods ul li {
   font-size: 14px;
 }
+
 .card .btn {
   margin-top: 10px;
   background-color: rgb(134, 29, 34);
@@ -445,6 +547,7 @@ iframe {
   font-size: 16px;
   transition: background-color 0.3s ease-in-out;
 }
+
 .card .btn:hover {
   background-color: #0056b3;
 }
@@ -454,32 +557,38 @@ iframe {
   padding: 20px 0;
   margin-bottom: 20px;
 }
+
 .payment-methods .container h6 {
   margin-bottom: 10px;
   font-size: 14px;
   color: #333;
 }
+
 .payment-methods .container .payment-icons {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
+
 .payment-methods .container .payment-icons .payment-icon {
   width: 50px;
   height: auto;
   transition: transform 0.3s;
 }
+
 .payment-methods .container .payment-icons .payment-icon:hover {
   transform: scale(1.1);
 }
+
 /* Contenedor principal */
 .contenedor-productos-carrito {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
-  padding-right: 20px; /* Agrega un espacio de 20px en el lado derecho del contenedor */
+  padding-right: 20px;
+  /* Agrega un espacio de 20px en el lado derecho del contenedor */
 }
 
 /* Carrito */
@@ -488,9 +597,10 @@ iframe {
   background-color: #fafafa;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 10px 10px 20px  rgb(92, 92, 92);
+  box-shadow: 10px 10px 20px rgb(92, 92, 92);
   position: absolute;
-  right: 20px; /* Ajusta esto para crear espacio desde el borde derecho de la página */
+  right: 20px;
+  /* Ajusta esto para crear espacio desde el borde derecho de la página */
   top: 0;
   z-index: 100;
 }
@@ -507,10 +617,98 @@ iframe {
   margin-top: 20px;
 }
 
-.btn-vaciar, .btn-compra {
+.btn-vaciar,
+.btn-compra {
   margin: 10px;
   padding: 10px 20px;
   font-size: 15px;
   text-align: center;
   width: 100%;
+}
+/* Estilos para el mensaje de registro */
+#registerMessage, #loginMessage {
+  text-align: center; 
+  font-size: 1.2em; 
+  margin: 10px 0; 
+  padding: 10px; 
+  margin-left: auto; /* Centra horizontalmente */
+  margin-right: auto; /* Centra horizontalmente */
+
+}
+
+/* Estilos específicos para mensajes de éxito */
+#registerMessage.success, #loginMessage.success {
+  background-color: #000000; /* Verde para éxito */
+}
+
+/* Estilos específicos para mensajes de error */
+#registerMessage.error, #loginMessage.error {
+  background-color: #ff0101; /* Rojo para error */
+}
+/* Estilos generales */
+body#checkout-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#productos-seleccionados {
+  width: 80%;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#total-compra {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#confirmar-compra {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#confirmar-compra:hover {
+  background-color: #218838;
+}
+
+/* Estilos para el mensaje de confirmación */
+#mensaje-compra {
+  margin-top: 20px;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 80%;
+  text-align: center;
+}
+
+/* Estilos para mensajes de éxito */
+#mensaje-compra.exito {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+/* Estilos para mensajes de error */
+#mensaje-compra.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
 }
