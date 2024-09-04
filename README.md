@@ -2,9 +2,9 @@ Desarrollo Web - JS
 
 Sobre el Autor:
 
-Kevin L. Schacker
+Kevin Leonardo Schacker
 
-Soy profesor de informática y estudiante de programación, con un fuerte enfoque en el desarrollo web y la enseñanza de tecnología. Actualmente, soy facilitador en la Escuela de Robótica, donde enseño a estudiantes sobre robótica y programación. 
+Soy profesor de Informática y estudiante de programación, vivo en la ciudad de Oberá, Misiones, Argentina,  con un fuerte enfoque en el desarrollo web y la enseñanza de tecnología. Actualmente, soy facilitador en la Escuela de Robótica, donde enseño a estudiantes sobre robótica y programación. 
 Además, imparto clases de Introducción a la Programación en Silicon Misiones.
 
 Mi pasión por la tecnología y la educación me ha llevado a explorar y desarrollar habilidades en diversas áreas del desarrollo web, incluyendo HTML, CSS y JavaScript. 
