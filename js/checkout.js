@@ -15,23 +15,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     totalElement.textContent = `Total: $${total.toFixed(2)}`;
 
-    // Evento para confirmar la compra
+    // confirmar la compra
     document.getElementById('confirmar-compra').addEventListener('click', () => {
         if (carrito.length > 0) {
             mostrarMensaje('¡Compra confirmada! Muchas gracias por elegirnos', 'exito');
             localStorage.removeItem('carrito');
             setTimeout(() => {
-                window.location.href = 'productos.html'; // Redirigir a la página principal o donde quieras
+                window.location.href = 'productos.html'; 
             }, 2000);
         } else {
             mostrarMensaje('El carrito está vacío. No hay nada que comprar.', 'error');
         }
     });
-
-    // Función para mostrar mensajes
     function mostrarMensaje(mensaje, tipo) {
         mensajeCompra.textContent = mensaje;
-        mensajeCompra.className = tipo; // Asigna la clase según el tipo de mensaje (exito o error)
+        mensajeCompra.className = tipo; 
         setTimeout(() => {
             mensajeCompra.textContent = '';
             mensajeCompra.className = ''; // Limpia el mensaje después de 3 segundos

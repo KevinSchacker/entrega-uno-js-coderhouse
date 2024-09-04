@@ -1,44 +1,60 @@
-// Función para registrar un usuario
-function registerUser(event) {
+async function registerUser(event) {
     event.preventDefault(); 
-
     const username = document.getElementById("registerUsername").value;
     const password = document.getElementById("registerPassword").value;
-    const messageElement = document.getElementById("registerMessage");
-
-    if (localStorage.getItem(username)) {
-        messageElement.textContent = "Este usuario ya se encuentra registrado.";
-        messageElement.style.color = "red";
-    } else {
+    try {
+        if (localStorage.getItem(username)) {
+            throw new Error("Este usuario ya se encuentra registrado.");
+        }
         localStorage.setItem(username, password);
-        messageElement.textContent = "Usuario registrado con éxito.";
-        messageElement.style.color = "green";
-        document.getElementById("registerForm").reset(); 
+        Swal.fire({
+            title: '¡Éxito!',
+            text: 'Usuario registrado con éxito.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            document.getElementById("registerForm").reset(); 
+        });
+
+    } catch (error) {
+        Swal.fire({
+            title: 'Error',
+            text: error.message || 'Hubo un problema al registrar el usuario.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
     }
 }
 
-// Función para iniciar sesión
-function loginUser(event) {
+async function loginUser(event) {
     event.preventDefault(); 
 
     const username = document.getElementById("loginUsername").value;
     const password = document.getElementById("loginPassword").value;
-    const messageElement = document.getElementById("loginMessage");
-
-    const storedPassword = localStorage.getItem(username);
-
-    if (storedPassword && storedPassword === password) {
-        messageElement.textContent = "Inicio de sesión exitoso. Bienvenido " + username;
-        messageElement.style.color = "green";
-        setTimeout(() => {
-            window.location.href = "../pags/productos.html";
-        }, 2000); // Esperar 2 segundos antes de redirigir
-    } else {
-        messageElement.textContent = "VERIFIQUE: Usuario o contraseña incorrectos.";
-        messageElement.style.color = "red";
+    try {
+        const storedPassword = localStorage.getItem(username);
+        if (storedPassword && storedPassword === password) {
+            Swal.fire({
+                title: '¡Bienvenido!',
+                text: 'Inicio de sesión exitoso. Bienvenido ' + username,
+                icon: 'success',
+                confirmButtonText: 'OK',
+                timer: 2000,
+                timerProgressBar: true
+            }).then(() => {
+                window.location.href = "../pags/productos.html";
+            });
+        } else {
+            throw new Error("VERIFIQUE: Usuario o contraseña incorrectos.");
+        }
+    } catch (error) {
+        Swal.fire({
+            title: 'Error',
+            text: error.message || 'Hubo un problema al iniciar sesión.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
     }
 }
-
-// Asignar eventos a los formularios
 document.getElementById("registerForm").addEventListener("submit", registerUser);
 document.getElementById("loginForm").addEventListener("submit", loginUser);

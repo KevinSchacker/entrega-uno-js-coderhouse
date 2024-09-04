@@ -1,32 +1,41 @@
-(function() {
+(function () {
     let carrito = [];
-
-    // Selecciona todos los botones "Agregar al carrito"
     const botonesAgregarCarrito = document.querySelectorAll('.btn-primary');
     const contenedorCarrito = document.getElementById('lista-carrito');
     const totalElement = document.getElementById('total-compra');
     const botonVaciarCarrito = document.getElementById('vaciar-carrito');
     const botonRealizarCompra = document.getElementById('realizar-compra');
-
-    // Recorre todos los botones y agrega un evento de clic a cada uno
+    // Cargar el carrito desde localStorage si existe
+    window.onload = function () {
+        const carritoGuardado = localStorage.getItem('carrito');
+        if (carritoGuardado) {
+            carrito = JSON.parse(carritoGuardado);
+            mostrarCarrito();
+            if (carrito.length > 0) {
+                Swal.fire({
+                    title: '¡Atención!',
+                    text: 'No olvides de finalizar tu compra.',
+                    icon: 'info',
+                    confirmButtonText: 'OK',
+                    timer: 5000
+                });
+            }
+        }
+    };
     botonesAgregarCarrito.forEach((boton) => {
         boton.addEventListener('click', () => {
             const card = boton.closest('.card');
             const nombreProducto = card.querySelector('.card-title').textContent;
             const precioProducto = obtenerPrecioProducto(nombreProducto);
-
             const producto = {
                 nombre: nombreProducto,
                 precio: precioProducto,
                 cantidad: 1
             };
-
             agregarProductoAlCarrito(producto);
             mostrarCarrito();
         });
     });
-
-    // Función para agregar un producto al carrito
     function agregarProductoAlCarrito(producto) {
         const productoExistente = carrito.find(item => item.nombre === producto.nombre);
 
@@ -35,13 +44,11 @@
         } else {
             carrito.push(producto);
         }
+        localStorage.setItem('carrito', JSON.stringify(carrito));
     }
-
-    // Función para mostrar el carrito en la página
     function mostrarCarrito() {
         contenedorCarrito.innerHTML = '';
         let total = 0;
-
         carrito.forEach((producto, index) => {
             const itemCarrito = document.createElement('div');
             itemCarrito.classList.add('producto-carrito');
@@ -49,10 +56,8 @@
                 <span class="producto-nombre">${producto.nombre}</span> - 
                 <span class="producto-precio">$${producto.precio.toFixed(2)}</span> x 
                 <span class="producto-cantidad">${producto.cantidad}</span>
-                <button class="btn btn-eliminar">Eliminar</button>
-            `;
-
-            // Agregar evento al botón "Eliminar"
+                <button class="btn btn-eliminar">Eliminar</button>`
+                ;
             const botonEliminar = itemCarrito.querySelector('.btn-eliminar');
             botonEliminar.addEventListener('click', () => {
                 eliminarProductoDelCarrito(index);
@@ -60,38 +65,27 @@
             });
 
             contenedorCarrito.appendChild(itemCarrito);
-
             total += producto.precio * producto.cantidad;
         });
-
-        // Mostrar el total
         totalElement.textContent = `Total: $${total.toFixed(2)}`;
-
-        // Mostrar/ocultar botones
         botonVaciarCarrito.style.display = carrito.length > 0 ? 'block' : 'none';
         botonRealizarCompra.style.display = carrito.length > 0 ? 'block' : 'none';
     }
-
-    // Función para eliminar un producto del carrito
     function eliminarProductoDelCarrito(index) {
         carrito.splice(index, 1);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
     }
-
-    // Función para vaciar el carrito
     botonVaciarCarrito.addEventListener('click', () => {
         carrito = [];
+        localStorage.removeItem('carrito'); // Eliminar el carrito de localStorage
         mostrarCarrito();
     });
-
-    // Función para redirigir a la página de compra
     botonRealizarCompra.addEventListener('click', () => {
         // Guarda el carrito en localStorage
         localStorage.setItem('carrito', JSON.stringify(carrito));
         // Redirige a la página de checkout
         window.location.href = '../pags/checkout.html';
     });
-
-    // Función para obtener el precio del producto
     function obtenerPrecioProducto(nombre) {
         const precios = {
             "Celular MOTOROLA": 299.99,
