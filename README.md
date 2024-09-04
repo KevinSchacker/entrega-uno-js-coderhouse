@@ -22,7 +22,7 @@ JavaScript: Interactividad y funcionalidades dinámicas.
 
 Instrucciones de Ejecución:
 
-Para ejecutar el proyecto, simplemente abre el archivo index.html en un navegador web. No se requiere instalación adicional ya que no se usan dependencias externas.
+Para ejecutar el proyecto, simplemente abre el link: https://kevinschacker.github.io/entrega-uno-js-coderhouse/ en un navegador web. No se requiere instalación adicional ya que no se usan dependencias externas.
 
 Contacto:
 
