@@ -3,10 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const contenedorProductos = document.getElementById('productos-seleccionados');
     const totalElement = document.getElementById('total-compra');
-    const mensajeCompra = document.getElementById('mensaje-compra');
+    const botonConfirmar = document.getElementById('confirmar-compra');
     let total = 0;
 
+    // Verificar que los elementos existan en el DOM
+    if (!contenedorProductos || !totalElement || !botonConfirmar) {
+        console.error('Error: Elementos del DOM no encontrados.');
+        return;
+    }
+
     carrito.forEach(producto => {
+        if (!producto.nombre || typeof producto.precio !== 'number' || typeof producto.cantidad !== 'number') {
+            console.error('Error: Producto inválido en el carrito.', producto);
+            return;
+        }
         const item = document.createElement('div');
         item.textContent = `${producto.nombre} - $${producto.precio.toFixed(2)} x ${producto.cantidad}`;
         contenedorProductos.appendChild(item);
@@ -14,25 +24,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     totalElement.textContent = `Total: $${total.toFixed(2)}`;
-
-    // confirmar la compra
-    document.getElementById('confirmar-compra').addEventListener('click', () => {
+    botonConfirmar.addEventListener('click', () => {
         if (carrito.length > 0) {
-            mostrarMensaje('¡Compra confirmada! Muchas gracias por elegirnos', 'exito');
-            localStorage.removeItem('carrito');
-            setTimeout(() => {
-                window.location.href = 'productos.html'; 
-            }, 2000);
+            const detalleProductos = carrito.map(producto =>
+                `<li>${producto.nombre} x ${producto.cantidad} - $${(producto.precio * producto.cantidad).toFixed(2)}</li>`
+            ).join('');
+
+            confirmPurchase(detalleProductos);
         } else {
-            mostrarMensaje('El carrito está vacío. No hay nada que comprar.', 'error');
+            Swal.fire({
+                title: 'Error',
+                text: 'El carrito está vacío. No hay nada que comprar.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
         }
     });
-    function mostrarMensaje(mensaje, tipo) {
-        mensajeCompra.textContent = mensaje;
-        mensajeCompra.className = tipo; 
-        setTimeout(() => {
-            mensajeCompra.textContent = '';
-            mensajeCompra.className = ''; // Limpia el mensaje después de 3 segundos
-        }, 3000);
+    function confirmPurchase(detalleProductos) {
+        Swal.fire({
+            title: '¿Confirmar compra?',
+            html: `<ul>${detalleProductos}</ul><br>Total: $${total.toFixed(2)}. ¿Deseas continuar?`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, confirmar',
+            cancelButtonText: 'Cancelar',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: '¡Compra confirmada!',
+                    text: 'Muchas gracias por elegirnos.',
+                    icon: 'success',
+                    timer: 2000,
+                    timerProgressBar: true,
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    localStorage.removeItem('carrito'); // Limpiar el carrito después de la confirmación
+                    window.location.href = 'productos.html';
+                });
+            }
+        });
     }
 });

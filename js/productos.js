@@ -63,7 +63,6 @@
                 eliminarProductoDelCarrito(index);
                 mostrarCarrito();
             });
-
             contenedorCarrito.appendChild(itemCarrito);
             total += producto.precio * producto.cantidad;
         });
